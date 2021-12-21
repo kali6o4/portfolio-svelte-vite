@@ -1,0 +1,128 @@
+.e-gallery-item {
+  position: relative;
+  padding: 10px;
+
+  a, a:hover {
+    color: var(--text);
+  }
+
+  img {
+    width: 100%;
+    pointer-events: none;
+    user-select: none;
+    display: block;
+  }
+
+  ion-icon {
+    pointer-events: none;
+  }
+
+  &__container {
+    position: relative;
+    clip-path: inset(0px round 15px);
+
+    &::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      clip-path: inset(0px round 15px);
+    }
+
+    &:hover::before {
+      content: '';
+      background-color: rgba(0,0,0,.15);
+    }
+  }
+
+  &__info {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 11;
+  }
+
+  &__subinfo {
+    position: relative;
+    display: flex;
+    z-index: 12;
+  }
+
+  &__title {
+    margin-top: 5px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  &__icon {
+    width: 32px;
+    height: 32px;
+    background: var(--link);
+    border-radius: 50%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 15;
+    cursor: pointer;
+    font-size: 18px;
+
+    &:hover {
+      box-shadow: 0 0 0 3px var(--outline);
+    }
+
+    &--code {
+      margin-left: 40px;
+    }
+
+    &:hover .e-gallery-item__name {
+      display: block;
+    }
+  }
+
+  &__name {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    color: var(--text);
+    background: var(--background);
+    font-size: 14px;
+    font-weight: 500;
+    padding: 3px;
+    border-radius: 6px;
+    filter: drop-shadow(0px 0px 3px #000);
+    display: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 23px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-top: 5px solid black;
+      border-top-color: var(--background); 
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent; 
+    }
+  }
+}
+
+@media (min-width: 769px) {
+  .e-gallery-item {
+    width: 20%;
+  }
+}
+@media (max-width: 768px) {
+  .e-gallery-item {
+    width: 33.333%;
+  }
+}
+@media (max-width: 599px) {
+  .e-gallery-item {
+    width: 50%;
+  }
+}
