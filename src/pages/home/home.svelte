@@ -13,6 +13,11 @@
     {name: 'Angular', icon: 'angular'},
     {name: 'Svelte', icon: 'svelte'}
   ]
+
+  const imgUrl = new URL('/logo.png', import.meta.url).href
+  const imgAltUrl = new URL('/logo-alt.png', import.meta.url).href
+  document.getElementById('hero-img').src = imgUrl
+
 </script>
 
 <style lang="scss">
@@ -20,7 +25,7 @@
 </style>
 
 <header class="e-home__header">
-  <div class="e-home__avatar"><img alt={$t('home.avatar')} src='https://live.staticflickr.com/65535/51349705852_7df4bd604b_o.jpg' /></div>
+  <div class="e-home__avatar"><img alt={$t('home.avatar')} src='/logo-alt.png' /></div>
   <p class="e-home__p1">{$t('home.header1')}</p>
   <h1 class="e-home__name">Melissa Fernandes</h1>
   <p class="e-home__p2">{$t('home.header2')}</p>

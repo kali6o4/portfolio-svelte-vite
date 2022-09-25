@@ -8,7 +8,7 @@
 	import NotFound from "./pages/404/not-found.svelte";
 	import Redirect from "./components/redirect.svelte";
 
-  document.title = 'Melissa Fernandes - Front End Dev';
+  document.title = 'Pretty Alright Tattoos - prettyalrighttattoos';
 </script>
 
 <style global lang="scss">
